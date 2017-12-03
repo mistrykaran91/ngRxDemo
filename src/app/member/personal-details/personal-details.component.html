@@ -1,0 +1,71 @@
+<div class="container" [formGroup]="personalDetailsForm">
+
+  <h4>
+    Personal Details
+  </h4>
+
+  <div class="row">
+    <button id="btnAdd" name="btnAdd" class="btn btn-primary" (click)="onRedirect()" >Redirect</button>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <label for="firstName">FirstName</label>
+      <input type="text" formControlName="firstName" class="form-control" />
+    </div>
+
+    <div class="col-md-3">
+      <label for="lastName">LastName</label>
+      <input type="text" formControlName="lastName" class="form-control" />
+    </div>
+
+    <div class="col-md-3">
+      <label for="gender">Gender</label>
+      <div class="form-group">
+        <input type="radio" name="gender" formControlName="gender" value="Male">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" formControlName="gender" value="Female" />
+        <label for="female">Female</label>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <button id="btnAdd" name="btnAdd" class="btn btn-primary" (click)="onAddClick()">Add</button>
+    </div>
+    <br><br>
+  </div>
+
+  <div class="row col-md-8">
+    <table class="table table-bordered">
+      <tr>
+        <th>
+          FirstName
+        </th>
+        <th>
+          LastName
+        </th>
+        <th>
+          GenderName
+        </th>
+      </tr>
+      <tbody>
+        <tr *ngFor="let list of personalList">
+          <td>
+            {{ list.firstName }}
+          </td>
+          <td>
+            {{ list.lastName }}
+          </td>
+          <td>
+            {{ list.gender }}
+          </td>
+
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div [formGroup]="mainForm">
+
+  <div class="row">
+
+    <personal-details [personalDetails]="(member$ | async).member.personalformState" [personalList]="(member$ | async).member.memberList.personalList">
+    </personal-details>
+
+  </div>
+
+  <div class="row">
+
+    <contact-details [contactDetails]="(member$ | async).member.contactformState" [contactList]="(member$ | async).member.memberList.contactList">
+    </contact-details>
+
+  </div>
+
+</div>

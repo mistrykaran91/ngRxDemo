@@ -1,0 +1,61 @@
+<div class="container" [formGroup]="contactDetailsForm">
+
+  <h4>
+    Contact Details
+  </h4>
+
+  <div class="row">
+    <div class="col-md-3">
+      <label for="addressLine1">Address Line 1</label>
+      <input type="text" formControlName="addressLine1" class="form-control" />
+    </div>
+
+    <div class="col-md-3">
+      <label for="addressLine2">Address Line 2</label>
+      <input type="text" formControlName="addressLine2" class="form-control" />
+    </div>
+
+    <div class="col-md-3">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text" formControlName="phoneNumber" class="form-control" />
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <button id="btnAdd" name="btnAdd" class="btn btn-primary" (click)="onAddClick()">Add</button>
+    </div>
+    <br><br>
+  </div>
+  <br>
+  <div class="row col-md-8">
+    <table class="table table-bordered">
+      <tr>
+        <th>
+          Address Line 1
+        </th>
+        <th>
+          Address Line 2
+        </th>
+        <th>
+          Phone Number
+        </th>
+      </tr>
+      <tbody>
+        <tr *ngFor="let list of contactList">
+          <td>
+            {{ list.addressLine1 }}
+          </td>
+          <td>
+            {{ list.addressLine2 }}
+          </td>
+          <td>
+            {{ list.phoneNumber }}
+          </td>
+
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>
